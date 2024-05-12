@@ -68,6 +68,7 @@ app.post("/send-email", async (req, res) => {
 
 app.post("/send-diller", async (req, res) => {
     const {
+        title,
         firstName,
         lastName,
         phoneNumber,
@@ -95,7 +96,7 @@ app.post("/send-diller", async (req, res) => {
     const mailOptions = {
         from: "schtern-mail@mail.ru",
         to: "yellowcube@mail.ru", // Укажите свой собственный адрес электронной почты
-        subject: "Новая заявка с сайта о диллерстве",
+        subject: `Новая заявка с сайта о ${title}`,
         text: `Имя: ${firstName}\n
         Фамилия: ${lastName}\n
         Номер телефона: ${phoneNumber}\n
